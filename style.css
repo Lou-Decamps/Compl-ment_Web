@@ -1,12 +1,12 @@
-#classe-1 {
+.classe-1 {
     border: 2px solid blue;
 }
-#classe-2 {
+.classe-2 {
     border: 2px solid green;
 }
-#classe-3 {
+.classe-3 {
     border: 2px solid orange;
 }
-#classe-4 {
+.classe-4 {
     border: 2px solid red;
 }
