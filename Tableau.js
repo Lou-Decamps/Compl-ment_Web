@@ -1,8 +1,6 @@
-// Exo 1
 const tab = [];
 let i = 0
 const delay = 2000;
-
 
 function Tableau(min, max) {
     min = Math.ceil(-10);
@@ -14,11 +12,10 @@ function Tableau(min, max) {
     return tab;
 }
 
-//Exo 3
 let intervalId;
 const zone = document.getElementById("valeur");
 var text = document.getElementById("text");
-//const text = document.getElementById("text");
+var text2 = document.getElementById("text2");
 
 // function showtabNum() {
 //     Tableau(tab);
@@ -36,6 +33,10 @@ var text = document.getElementById("text");
 // }
 setInterval(function ()
 {
+    if (i > 0 && i <= 20)
+    {
+        historique(tab[i - 1]);
+    }
     const val = tab[i];
     zone.textContent = val;
     color(val);
@@ -65,4 +66,7 @@ function color(num) {
     }
 }
 
+function historique(num) {
+    document.getElementById("text2").textContent = "La température est " + num + " c°";
+}
 Tableau(tab);
