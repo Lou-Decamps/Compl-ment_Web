@@ -1,39 +1,35 @@
 // Exo 1
+const tab = [];
+let i = 0
+delay = 2000;
+zone = document.getElementById("valeur");
 function Tableau() {
-    this.tableau = [];
     min = Math.ceil(-10);
     max = Math.floor(40);
 
     for (let i = 0; i < 20; i++) {
-        tableau.push(Math.floor(Math.random() * (max - min + 1)) + min);
+        tab.push(Math.floor(Math.random() * (max - min + 1)) + min);
     };
-    return this.tableau;
+    return tab;
 }
-
-tab = Tableau();
-console.log(tab);
 
 //Exo 3
 let intervalId;
 
-function stopVal() {
-    clearInterval(intervalId);
-    intervalId = null;
-}
 
-function tabNum() {
-    for (let i = 0; i < tab.length; i++) {
-        const intervalId =  setInterval(tab[i], 1000);
+function showtabNum() {
+    Tableau(tab);
+    if (i< tab.length)
+    {
+        zone.textContent = tab[i];
+        i++;
+        setInterval(showtabNum, delay);
     }
-    stopVal();
-    const intervalID = setInterval(myCallback, 500, "Parameter 1", "Parameter 2");
-
-    function myCallback(a, b) {
-        // Your code here
-        // Parameters are purely optional.
-        console.log(a);
-        console.log(b);
+    else
+    {
+        clearInterval(this.delay)
+        clearInterval(intervalId);
     }
 }
-
-document.getElementById("start").addEventListener("click", tabNum);
+Tableau(tab);
+const intervalID = setInterval(showtabNum, delay);
